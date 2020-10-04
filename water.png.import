@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/water.png-7f2497dcc8f582a6653e5106ce5ecbe3.image"
+
+[deps]
+
+source_file="res://water.png"
+dest_files=[ "res://.import/water.png-7f2497dcc8f582a6653e5106ce5ecbe3.image" ]
+
+[params]
+

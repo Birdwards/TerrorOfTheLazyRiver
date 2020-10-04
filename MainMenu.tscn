@@ -1,0 +1,283 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://button_pressed.png" type="Texture" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://button_normal.png" type="Texture" id=3]
+[ext_resource path="res://TestFontSmall.tres" type="DynamicFont" id=4]
+[ext_resource path="res://slider.png" type="Texture" id=5]
+[ext_resource path="res://grabber.png" type="Texture" id=6]
+[ext_resource path="res://SmallOutlineFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://LargeOutlineFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://difficultybuttongroup.tres" type="ButtonGroup" id=9]
+[ext_resource path="res://checkbox.png" type="Texture" id=10]
+[ext_resource path="res://checkbox_checked.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 86, 8 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 86, 8 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="MainMenu" type="PopupPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 320, 180 )
+custom_styles/panel = SubResource( 7 )
+popup_exclusive = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 320, 180 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_top = 6.0
+margin_right = 320.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 8 )
+text = "Terror of the Lazy River"
+align = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 22.0
+margin_right = 320.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 0, 64 )
+custom_styles/panel = SubResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_left = 8.0
+margin_top = 90.0
+margin_right = 311.0
+margin_bottom = 154.0
+size_flags_horizontal = 4
+custom_constants/separation = 18
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sliders" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 64.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicSlider" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Sliders"]
+margin_top = 14.0
+margin_right = 128.0
+margin_bottom = 30.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Sliders/MusicSlider"]
+margin_right = 38.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 7 )
+text = "Music"
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/HBoxContainer/Sliders/MusicSlider"]
+margin_left = 42.0
+margin_right = 128.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_icons/grabber_highlight = ExtResource( 6 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 3 )
+custom_styles/grabber_area = SubResource( 2 )
+max_value = 1.0
+step = 0.0
+value = 0.5
+
+[node name="SFXSlider" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Sliders"]
+margin_top = 34.0
+margin_right = 128.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Sliders/SFXSlider"]
+margin_right = 38.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 38, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "SFX"
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/HBoxContainer/Sliders/SFXSlider"]
+margin_left = 42.0
+margin_right = 128.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_icons/grabber_highlight = ExtResource( 6 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 4 )
+custom_styles/grabber_area_highlight = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
+max_value = 1.0
+step = 0.0
+value = 0.5
+
+[node name="Difficulty" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 146.0
+margin_right = 221.0
+margin_bottom = 64.0
+custom_constants/separation = -4
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Easy" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Difficulty"]
+margin_right = 75.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Difficulty/Easy"]
+margin_top = 4.0
+margin_right = 47.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "Easy"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/Difficulty/Easy"]
+margin_left = 51.0
+margin_right = 75.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_icons/radio_checked = ExtResource( 11 )
+custom_icons/radio_unchecked = ExtResource( 10 )
+enabled_focus_mode = 0
+group = ExtResource( 9 )
+flat = true
+
+[node name="Normal" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Difficulty"]
+margin_top = 20.0
+margin_right = 75.0
+margin_bottom = 44.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Difficulty/Normal"]
+margin_top = 4.0
+margin_right = 47.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 38, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "Normal"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/Difficulty/Normal"]
+margin_left = 51.0
+margin_right = 75.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_icons/radio_checked = ExtResource( 11 )
+custom_icons/radio_unchecked = ExtResource( 10 )
+pressed = true
+enabled_focus_mode = 0
+group = ExtResource( 9 )
+
+[node name="Hard" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Difficulty"]
+margin_top = 40.0
+margin_right = 75.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Difficulty/Hard"]
+margin_top = 4.0
+margin_right = 47.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 38, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "Hard"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/Difficulty/Hard"]
+margin_left = 51.0
+margin_right = 75.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_icons/radio_checked = ExtResource( 11 )
+custom_icons/radio_unchecked = ExtResource( 10 )
+enabled_focus_mode = 0
+group = ExtResource( 9 )
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 239.0
+margin_right = 303.0
+margin_bottom = 64.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/Buttons"]
+margin_top = 16.0
+margin_right = 64.0
+margin_bottom = 48.0
+focus_mode = 1
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
+texture_focused = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Buttons/PlayButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/Buttons"]
+visible = false
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 68.0
+focus_mode = 1
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
+texture_focused = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Buttons/QuitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="VBoxContainer"]
+margin_top = 158.0
+margin_right = 320.0
+margin_bottom = 173.0
+custom_fonts/font = ExtResource( 7 )
+text = "A game by Birdwards"
+align = 1
