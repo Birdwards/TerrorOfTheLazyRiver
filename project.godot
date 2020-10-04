@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Ld 47"
+config/name="Terror of the Lazy River"
 run/main_scene="res://River.tscn"
 config/icon="res://icon.png"
 

@@ -48,7 +48,7 @@ func game_over():
 
 func start_game():
 	$GUI/TimeElapsed.visible = true
-	$GUI/RidersLeft/Label.text = "Riders left: " + str(riders.size()) + "/" + str(Difficulty.num_riders)
+	$GUI/RidersLeft/Label.text = "Riders left: " + str(Difficulty.num_riders) + "/" + str(Difficulty.num_riders)
 	$GUI/RidersLeft.visible = true
 	$YSort/Player.activate()
 	game_started = true
